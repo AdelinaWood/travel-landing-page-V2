@@ -91,7 +91,7 @@ header {
 
 /*Intro styles start*/
 .intro {
-    height: 100vh;
+    min-height: 100vh;
     background: url(../img/intro_bg.jpg) no-repeat center;
     background-size: cover;
     padding-top: 263px;
@@ -122,13 +122,54 @@ header {
 }
 
 .search-form__field {
-    background-color: transparent;
-    background: url(../img/svg/circle_icon.svg) no-repeat left;
+    width: 297px;
+    background: transparent url(../img/svg/circle_icon.svg) no-repeat left 7px;
+    background-size: 20px;
+    border: 0;
+    border-bottom: 2px solid #BFC0C5;
+    margin-right: 60px;
+    padding-left: 43px;
+    padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
 }
 
+.search-form__field::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
 
+.search-form_submit {
+    padding: 15px 39px;
+    text-transform: uppercase;
+    background: #1B7DFF;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    border: 0;
+}
 
+.search-form_submit:hover, .search-form_submit:focus, .search-form_submit:active {
+    background: #0e66da;   
+}
 
 /*Intro styles end*/
+
+
+/*Benefit styles start*/
+
+.benefits__wrap {
+    max-width: 1262px;
+    background-color: #fff;
+    margin: 0 auto;
+   
+}
+
+.benefits__cards {
+    height: 30vh;
+}
 
 
