@@ -42,10 +42,40 @@ body {
     font-weight: normal;
     color: #102746;
 }
+
+img {
+    max-width: 100%; /*  для того чтобы изображение никогда не превышало размеры контейнера в котором оно находится */
+    height: auto; /* чтобы оно сжималось пропррционально по высоте*/
+}
 /*Header styles start*/
 .wrapper {
     max-width: 1060px;
     margin: 0 auto;    /* данное свойство всегда будет выравнивать наш блок wrapper внутри его родителя по центру*/
+}
+
+.wrapper-full {
+    max-width: 1262px;
+    margin: 0 auto;
+}
+
+.section__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section__title::after {
+    display: block;
+    content: '';
+    width: 253px;
+    height: 3px; 
+    background: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 header {
@@ -90,11 +120,14 @@ header {
 /*Header styles end*/
 
 /*Intro styles start*/
+
 .intro {
+    /* min-height: 100vh; */
     min-height: 100vh;
     background: url(../img/intro_bg.jpg) no-repeat center;
     background-size: cover;
     padding-top: 263px;
+    padding-bottom: 223px;
 }
 
 .intro__title {
@@ -113,6 +146,10 @@ header {
     color: #FFFFFF;
     max-width: 546px;
     margin-bottom: 59px;
+}
+
+.search-form {
+    margin-bottom: 100px;
 }
 
 .search-form__info {
@@ -162,15 +199,16 @@ header {
 
 /*Benefit styles start*/
 
+.benefits {
+    margin-bottom: 131px;
+}
+
 .benefits__wrap {
     max-width: 1262px;
     background-color: #fff;
     margin: 0 auto;
     box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
     position: relative;
-
-    border: 1px solid red;
-    padding-bottom: 300px;
 }
 
 .benefits__title {
@@ -195,6 +233,7 @@ header {
 
 .benefits__card {
     grid-column: span 1;
+    margin-bottom: 112px;
 }
 
 .benefits__card-pic {
@@ -206,4 +245,210 @@ header {
     display: block;
 }
 
+.benefits__card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-right: 26px;
+}
 
+.benefits__card-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 39px;
+}
+
+.benefits__card-more {
+    display: inline-block;
+    padding-right: 59px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat 95% center;
+    transition: 2s all;
+}
+
+.benefits__card-more:hover, .benefits__card-more:focus {
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+
+}
+
+/* Placec styles start */
+
+.places {
+    margin-bottom: 131px;
+}
+
+.places__caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* выровняли по центру по вертикали */
+    justify-content: space-between; /* распределение контента такое что блоки внутри прибились к разным концам родительского блока */
+    margin-bottom: 36px;
+}
+
+.places__title {
+    margin-right: 15px;
+}
+
+.places__view-all {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+    display: inline-block;
+    padding-right: 59px;
+}
+
+.places__view-all:focus, .pleces__view-all:hover {
+    opacity: .65;
+}
+
+.places__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;   
+}
+
+.places__card {
+    position: relative;
+    overflow: hidden;
+}
+
+.places__card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 24, 36, 0.4);  /* red green blue и альфа канал который отвечает за прозрачность */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.places__card:hover .places__card-pic {
+    transform: scale(1.05);
+}
+
+.places__card-title {
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    position: absolute;
+    bottom: 27px;
+    left: 29px;
+    z-index: 3;
+}
+
+.places__card_size_lg {
+    grid-column: span 3;
+}
+
+.places__card_size_sm {
+    grid-column: span 2;
+}
+
+
+
+.places__card-pic {
+    width: 100%;
+    transition: .15s all;
+}
+
+.places__card-pic_size_lg {
+    height: 354px;
+    object-fit: cover;
+}
+
+.places__card-pic_size_sm {
+    height: 283px;
+    object-fit: cover;
+}
+
+.places__card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+
+/* Placec styles end */
+
+/* множественный курсор ставим при пом клавиши alt*/
+/* тег section подразумевает наличие заголовка*/
+
+
+
+/* Tours styles start */
+
+.tours {
+    margin-bottom: 139px;
+}
+
+.tours_tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 108px;
+    align-items: center;
+    margin-bottom: 77px;
+}
+
+.tour__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 85px;
+
+}
+
+.tour__info {
+    padding-left: 47px;
+}
+
+.tour__desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 58px;
+}
+
+.tour__more {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+    padding-right: 59px;
+    display: inline-block;
+}
+
+.tour__more:focus, .tour__more:hover {
+    opacity: .65;
+}
+
+
+
+/* Tours styles end */
+
+/* Top styles start */
+
+.top {
+    margin-bottom: 86px;
+}
+
+.top__title {
+    margin-bottom: 54px;
+}
+
+
+
+
+
+/* Top styles end */
