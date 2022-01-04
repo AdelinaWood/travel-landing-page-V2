@@ -14,4 +14,14 @@
 
 //и код внутри нее отработает сразу при загрузке main.js
 
-console.log('Hello!');
+// Burger handler
+
+(function (){
+    const burgerItem = document.querySelector('.burger');
+    burgerItem.addEventListener('click', () => {
+        
+    });
+
+}());
+
+
